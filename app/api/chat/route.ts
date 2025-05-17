@@ -10,7 +10,7 @@ import { prisma } from "@/lib/prisma";
 import { getMessagesHistoryforAI } from "@/actions/user-action";
 
 export async function POST(req: Request) {
-  const { messages, chatId, id } = await req.json();
+  const { messages, chatId } = await req.json();
 
   const session = await auth.api.getSession({
     headers: await headers(),
@@ -19,8 +19,6 @@ export async function POST(req: Request) {
   if (!session?.user?.id) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
-
-  console.log(chalk.red(id));
 
   const systemPrompt =
     "You are a helpful assistant that act as web3 crypto solana degen who talk like a pirate and you are in a conversation with a user.";
@@ -61,7 +59,7 @@ export async function POST(req: Request) {
   } catch (error) {
     return NextResponse.json(
       { error: "Failed to process conversation: " + error },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -71,7 +69,7 @@ const updateChat = async (
   chatId: string,
   id: string,
   role: string,
-  content: string
+  content: string,
 ) => {
   await prisma.chat.update({
     where: { id: chatId },
