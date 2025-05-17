@@ -1,0 +1,8 @@
+onlyBuiltDependencies:
+  - '@heroui/shared-utils'
+  - bigint-buffer
+  - bufferutil
+  - protobufjs
+  - sharp
+  - unrs-resolver
+  - utf-8-validate
