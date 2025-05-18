@@ -4,7 +4,6 @@ import React from "react";
 import { ScrollShadow } from "@heroui/scroll-shadow";
 import { Spacer } from "@heroui/spacer";
 import { Button } from "@heroui/button";
-import { Icon } from "@iconify/react";
 import { useDisclosure } from "@heroui/use-disclosure";
 import { useAtom } from "jotai";
 import Link from "next/link";
@@ -58,15 +57,8 @@ export default function SidebarMain({
       <Button
         fullWidth
         as={Link}
-        className="mb-6 mt-2 h-[44px] justify-start font-medium gap-3 bg-default-foreground px-3 py-[10px] text-default-50"
+        className="mb-6 mt-2 h-[44px] bg-default-foreground font-medium gap-3  text-default-50  px-3 py-[10px] "
         href="/dashboard"
-        startContent={
-          <Icon
-            className="text-default-50"
-            icon="solar:chat-round-dots-linear"
-            width={24}
-          />
-        }
       >
         New Chat
       </Button>
@@ -89,7 +81,7 @@ export default function SidebarMain({
     <div className="">
       {isSidebarOpen && (
         <SidebarDrawer
-          className="h-full flex-none bg-[#111] block  md:relative overflow-hidden"
+          className="h-full flex-none dark:bg-[#111] block  md:relative overflow-hidden"
           isOpen={isOpen}
           onOpenChange={onOpenChange}
         >

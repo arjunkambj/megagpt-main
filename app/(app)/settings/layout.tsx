@@ -10,7 +10,7 @@ export default function SettingsLayout({
     <div className="relative flex flex-col bg-default-50 justify-center items-center w-full h-screen">
       <SettingsButton />
       <div className="flex flex-col gap-4 max-w-7xl px-5 py-6 w-full h-full rounded-lg shadow-sm">
-        <div className="flex w-full h-full flex-row gap-4">
+        <div className="flex w-full h-full flex-row gap-10">
           <UserStat />
           <div className="flex flex-col w-full h-full">{children}</div>
         </div>
